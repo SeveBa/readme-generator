@@ -2,8 +2,9 @@
 
 const inquirer = require("inquirer");
 
-const generate = require('./utils/generateMarkdown.js')
-generate.renderLicenseBadge("this is my license")
+const generate = require('./utils/generateMarkdown.js');
+generate.renderLicenseBadge("this is my license");
+const fs = require("fs");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -48,7 +49,7 @@ const questions = [
   },
   {
     type: 'input',
-    name: "usage information",
+    name: "usageInformation",
     message: "What is the usage information?",
     validate: usageInput => {
       if (usageInput) {
@@ -61,7 +62,7 @@ const questions = [
   },
   {
     type: 'input',
-    name: "contribution guidelines",
+    name: "contributionGuidelines",
     message: "What are the contribution guidelines?",
     validate: guidelinesInput => {
       if (guidelinesInput) {
@@ -74,7 +75,7 @@ const questions = [
   },
   {
     type: 'input',
-    name: "test instructions",
+    name: "testInstructions",
     message: "What are the test instructions?",
     validate: testInput => {
       if (testInput) {
@@ -88,18 +89,19 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  console.log(fileName)
+  fs.writeFileSync(fileName, data, function(err){
+    return console.log(err)
+  });
+}
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
         console.log(answers);
         const readme = generate.generateMarkdown(answers)
-        console.log(readme)
-        fs.writeFileSync('README.md', markdownAnswers, function(err){
-          return console.log(err)
-        });
-        
+        writeToFile('README.md', readme)
       })
 }
 
