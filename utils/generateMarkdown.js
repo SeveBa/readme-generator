@@ -58,15 +58,27 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-  return `
+  return `${renderLicenseBadge(answers.license)}
 # ${answers.title}
 ## Table of Contents
-  - ### Description: ${answers.description}
-  - ### Installation: ${answers.installation}
-  - ### Usage Information: ${answers.usageInformation}
-  - ### Contribution Guidelines: ${answers.contributionGuidelines}
-  - ### Test Instructions: ${answers.testInstructions}
+  - ## Description: 
+    ### ${answers.description}
+  - ## Installation: 
+    ### ${answers.installation}
+  - ## Usage Information: 
+    ### ${answers.usageInformation}
+  - ## License Information: 
+    ### ${answers.license}
+  - ## Contributors: 
+    ### ${answers.contributors}
+  - ## Test Instructions: 
+    ### ${answers.testInstructions}
 
+## Questions? Contact Below: 
+  - ## Email:
+    ### ${answers.email}
+  - ## Github
+    Created by: [${answers.github}](https://github.com/${answers.github})
 `;
 }
 

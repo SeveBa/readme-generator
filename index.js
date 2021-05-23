@@ -61,14 +61,28 @@ const questions = [
     }
   },
   {
+    type: 'list',
+    name: 'license',
+    message: 'Please provide your license:',
+    choices: ['Apache 2.0', 'Boost', 'BSD'],
+    validate: licenseInput => {
+        if (licenseInput) {
+            return true
+        } else {
+            console.log('Please enter License info!')
+            return false
+        }
+    }
+  },
+  {
     type: 'input',
-    name: "contributionGuidelines",
-    message: "What are the contribution guidelines?",
-    validate: guidelinesInput => {
-      if (guidelinesInput) {
+    name: "contributors",
+    message: "Who contributed to this project?",
+    validate: contributorsInput => {
+      if (contributorsInput) {
         return true
       } else {
-        console.log('Please enter the contribution guidelines of your project!')
+        console.log('Please enter contributors!')
         return false
       }
     }
@@ -84,6 +98,45 @@ const questions = [
         console.log('Please enter the test instructions of your project!')
         return false
       }
+    }
+  },
+  // {
+  //   type: 'input',
+  //   name: 'questions',
+  //   message: 'Do you have any additional questions?',
+  //   validate: questionsInput => {
+  //       if (questionsInput) {
+  //           return true
+  //       } else {
+  //           console.log('Please enter any Question you may have.')
+  //           return false
+  //       }
+  //   }
+  // },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'Please enter your e-mail.',
+    validate: questionsInput => {
+        if (questionsInput) {
+            return true
+        } else {
+            console.log('Please enter your e-mail.')
+            return false
+        }
+    }
+  },
+  {
+    type: 'input',
+    name: 'github',
+    message: 'Please enter your Github username.',
+    validate: questionsInput => {
+        if (questionsInput) {
+            return true
+        } else {
+            console.log('Please enter your Github information.')
+            return false
+        }
     }
   },
 ];
