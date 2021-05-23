@@ -60,25 +60,48 @@ function renderLicenseLink(license) {
 function generateMarkdown(answers) {
   return `${renderLicenseBadge(answers.license)}
 # ${answers.title}
-## Table of Contents
-  - ## Description: 
-    ### ${answers.description}
-  - ## Installation: 
-    ### ${answers.installation}
-  - ## Usage Information: 
-    ### ${answers.usageInformation}
-  - ## License Information: 
-    ### ${answers.license}
-  - ## Contributors: 
-    ### ${answers.contributors}
-  - ## Test Instructions: 
-    ### ${answers.testInstructions}
 
-## Questions? Contact Below: 
-  - ## Email:
-    ### ${answers.email}
-  - ## Github
-    Created by: [${answers.github}](https://github.com/${answers.github})
+## Description: 
+
+${answers.description}
+
+## Table of Contents
+ 
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributors)
+* [License](#license)
+* [Tests](#tests)
+* [Questions](#questions?)
+
+
+   
+## Installation: 
+    
+${answers.installation}
+  
+## Usage: 
+  
+${answers.usageInformation} 
+
+## Contributors: 
+    
+${answers.contributors}
+  
+## License:
+
+${answers.license}
+
+## Tests: 
+    
+${answers.testInstructions}
+
+## Questions:
+For questions, please find contact information below.  
+
+Email: ${answers.email}
+
+Github: [${answers.github}](https://github.com/${answers.github})
 `;
 }
 
