@@ -3,7 +3,7 @@
 
 ## Description: 
 
-An app to generate a readme
+An application that generates a readme utilizing Node.js
 
 ## Table of Contents
  
@@ -18,11 +18,11 @@ An app to generate a readme
    
 ## Installation: 
     
-Install me
+Install Me
   
 ## Usage: 
   
-Use me 
+Use me at will 
 
 ## Contributors: 
     
@@ -39,5 +39,6 @@ Don't break it
 ## Questions:
 For questions, please find contact information below.  
 
-Email: seveba@mac.com
+Email: seveba@email.com
+
 Github: [seveba](https://github.com/seveba)
